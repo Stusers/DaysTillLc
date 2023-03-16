@@ -1,2 +1,2 @@
 # DaysTillLc
-Simple App to remind days until the irish finals
+Simple App to Remind you of the days until the irish finals!

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lc Doom Day</title>
+  <style>
+    /* Add some style to the page */
+    body {
+      text-align: center;
+      padding: 200px;
+      font-family: 'Roboto', sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    h1 {
+      font-size: 3em;
+      color: white;
+      margin: 0;
+      text-shadow: 2px 2px 0 black;
+    }
+    #days {
+      font-size: 2em;
+      color: white;
+      text-shadow: 2px 2px 0 black;
+    }
+	#seemore-btn {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.5em;
+      padding: 10px 20px;
+      background-color: transparent;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 100;
+      cursor: pointer;
+      text-decoration: none;
+  </style>
+  <script>
+    function updateDays() {
+      // Get the current date and time
+      var now = new Date();
+
+      // Set the target date to June 7th of the next year if the current date is after June 7th
+      var target = new Date(now.getFullYear() + (now.getMonth() > 5 || (now.getMonth() == 5 && now.getDate() >= 7) ? 1 : 0), 5, 7);
+
+      // Calculate the number of days between now and the target date
+      var days = Math.floor((target - now) / (1000 * 60 * 60 * 24));
+
+      // Display the number of days on the page
+      document.getElementById('days').innerHTML = days + ' days';
+    }
+    window.addEventListener('load', updateDays);
+  </script>
+</head>
+<body>
+  <h1>Days Until The Day Of Reckoning</h1>
+  <p id="days">Loading...</p>
+  <a id="seemore-btn" href="https://rickroll.it/rickroll.mp4" target="_blank">See more</a>
+</body>
+</html>
